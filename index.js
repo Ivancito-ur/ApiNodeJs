@@ -22,6 +22,10 @@ usersAPI(app);
 salesAPI(app);
 NotFoundAPI(app);
 
+
+
 app.listen(Config.port, () => {
   debug(`Servidor escuchando en el puerto ${Config.port}`);
 });
+
+//    "dev": "set DEBUG=app:* & nodemon index.js",
