@@ -32,16 +32,16 @@ const update = async (req, res) => {
   const collection = await Database(COLLECTION);
   let body = req.body;
   let result = await collection.updateOne(
-    { _id: ObjectId(body._id) },
+    { "_id": ObjectId(body._id) },
     {
       $set: {
-        nombre: body.nombre,
-        precio: body.precio,
-        cantidad: body.cantidad,
+        "nombre": body.nombre,
+        "precio": body.precio,
+        "cantidad": body.cantidad,
       },
     }
   );
-  return body.name;
+  return result;
 };
 
 const generateReports = async (name, res) => {
