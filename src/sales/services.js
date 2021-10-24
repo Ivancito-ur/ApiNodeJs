@@ -11,7 +11,7 @@ const getAll = async () => {
 const create = async (user,product, body) => {
   const collection = await Database(COLLECTION);
   let result = await collection.insert([
-    { idFrom: user,idProducto:product , message: "Muy bien, gracias" },
+    { idFrom: user, idProducto:product , message: "Muy bien, gracias" },
   ]);
   return result.insertedId;
 };

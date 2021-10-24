@@ -20,7 +20,7 @@ module.exports.SalesController = {
         Response.error(res, new createError.BadRequest());
       } else {
         let user = await SaleService.getByIdUser(body.idFrom);
-        let product = await SaleService.getByIdProduct(body.idProduct);
+        let product = await SaleService.getByIdProduct(body.idProducto);
         let inserId = await SaleService.create(user, product, body);
         Response.success(res, 201, `venta agregada`, inserId);
       }
