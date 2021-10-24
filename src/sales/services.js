@@ -8,10 +8,10 @@ const getAll = async () => {
   return await collection.find({}).toArray();
 };
 
-const create = async (user, body) => {
+const create = async (user,product, body) => {
   const collection = await Database(COLLECTION);
   let result = await collection.insert([
-    { idFrom: user, message: "Muy bien, gracias" },
+    { idFrom: user,idProducto:product , message: "Muy bien, gracias" },
   ]);
   return result.insertedId;
 };
@@ -25,7 +25,8 @@ const deleteById = async (id) => {
 const update = async (req, res) => {
   const collection = await Database(COLLECTION);
   let body = req.body;
-  let aux = body.idFrom
+  let aux = body.idFrom;
+  let auxProducto = body.idProducto;
   let result = await collection.updateOne(
     { _id: ObjectId(body._id) },
     {
@@ -34,6 +35,11 @@ const update = async (req, res) => {
           _id: ObjectId(body.idFrom._id),
           nombre: body.idFrom.nombre,
           ...aux
+        },
+        idProducto: {
+          _id: ObjectId(body.idProducto._id),
+          nombre: body.idProducto.nombre,
+          ...auxProducto
         },
         message: body.message,
       },
@@ -53,11 +59,18 @@ const getByIdUser = async (id) => {
   return await collection.findOne({ _id: ObjectId(id) });
 };
 
+//Buscamos el Id del producto
+const getByIdProduct = async (id) => {
+  const collection = await Database("products");
+  return await collection.findOne({ _id: ObjectId(id) });
+};
+
 module.exports.SaleService = {
   getAll,
   create,
   getByIdUser,
   deleteById,
   update,
-  getById
+  getById,
+  getByIdProduct
 };
