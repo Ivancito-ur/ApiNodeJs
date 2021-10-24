@@ -9,7 +9,6 @@ module.exports.salesAPI = (app) => {
     .get('/', SalesController.getSales)
     .get('/:id', SalesController.getSale)
     .post('/', SalesController.createSale)
-    .post('/', SalesController.createSale)
     .post('/update', SalesController.updateSale)
     .post('/:id', SalesController.deleteSale);
     

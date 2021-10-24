@@ -62,9 +62,9 @@ su navegador preferido.
 ```sh
   http://localhost:3000/
 ```
-## Navegacion
-
-`Pare enviar data en el body a las peticiones POST utilizamos POSTMAN`
+## Rutas
+`Para enviar data en el body a las peticiones POST utilizamos POSTMAN`
+### Navegacion en Productos
 
 Peticiones a la coleccion productos
 
@@ -75,6 +75,11 @@ http://localhost:3000/api/products/
 **Peticion GET, traer un producto, a través de un parametro id en la url**
 ```sh
 http://localhost:3000/api/products/{id}
+```
+**Peticion GET, reporte ene excel, se recomienda utilizar POSTMAN**
+`Para generar el excel, hacemos click en SEND SEND AN DOWNLOAD`
+```sh
+http://localhost:3000/api/products/report
 ```
 **Peticion POST, crear un producto**
 ```sh
@@ -89,12 +94,9 @@ http://localhost:3000/api/products/update
 http://localhost:3000/api/products/{id}
 ```
 
-> Note: `Para las peticiones POST, se requiere un cliente para consumirla` se recomienda utilizar POSTMAN.
-
-
 **Ejemplo para crear producto**
 ```sh
-opción BODY - RAW
+Opción BODY - RAW - TypeJSON
 {
     "nombre": "camisas",
     "precio": 50,
@@ -103,19 +105,116 @@ opción BODY - RAW
 ```
 **Ejemplo para editar producto**
 ```sh
-opción BODY - RAW
+Opción BODY - RAW - TypeJSON
 {
     "_id": "61715ba2db616a0305998fc8",
-    "name": "camisas exito",
+    "nombre": "camisas exito",
     "precio": 501,
     "cantidad": 2321
+}
+```
+
+### Navegacion en Usuarios
+
+Peticiones a la coleccion usuarios
+
+**Peticion GET, traer todos los usuarios**
+```sh
+http://localhost:3000/api/user/
+```
+**Peticion GET, traer un usuario, a través de un parametro id en la url**
+```sh
+http://localhost:3000/api/user/{id}
+```
+**Peticion POST, crear un usuario**
+```sh
+http://localhost:3000/api/user/
+```
+**Peticion POST, actualizar un usuario**
+```sh
+http://localhost:3000/api/user/update
+```
+**Peticion POST, eliminar un usuario, a través de un parametro id en la url**
+```sh
+http://localhost:3000/api/user/{id}
+```
+
+**Ejemplo para crear usuario**
+```sh
+Opción BODY - RAW - TypeJSON
+{
+    "nombre": "Juan",
+    "apellido": "Quintero",
+    "direccion": "Calle 66",
+    "edad": 20
+}
+```
+**Ejemplo para editar usuario**
+```sh
+Opción BODY - RAW - TypeJSON
+{
+    "_id": "61715ba33b616a0305998f431",
+    "nombre": "Juan Felipe",
+    "apellido": "Garcia",
+    "direccion": "Calle 65",
+    "edad": 22
+}
+```
+
+### Navegacion en Ventas
+
+Peticiones a la coleccion ventas
+
+**Peticion GET, traer todos las ventas**
+```sh
+http://localhost:3000/api/sales/
+```
+**Peticion GET, traer una venta, a través de un parametro id en la url**
+```sh
+http://localhost:3000/api/sales/{id}
+```
+**Peticion POST, crear una venta**
+```sh
+http://localhost:3000/api/sales/
+```
+**Peticion POST, actualizar una venta**
+```sh
+http://localhost:3000/api/sales/update
+```
+**Peticion POST, eliminar una venta, a través de un parametro id en la url**
+```sh
+http://localhost:3000/api/sales/{id}
+```
+
+**Ejemplo para crear una venta **
+```sh
+Opción BODY - RAW - TypeJSON
+{ 
+    "idFrom": "6174ac7e7ca5c005bd26d389",
+    "message": "Muy bien, gracias" 
+}
+
+```
+**Ejemplo para editar una venta**
+```sh
+Opción BODY - RAW - TypeJSON
+{   
+    "_id": "6174ad227ca5c005bd26d38a",
+    "idFrom": {
+         "_id": "6174ac7e7ca5c005bd26d389",
+        "nombre": "Juan Quintero",
+        "apellido": "Hernandez",
+        "direccion": "Calle Comun",
+        "edad": 26
+    }, 
+    "message": "Muy bien ING, gracias" 
 }
 ```
 
 ## 🔗 Links
 **Despliegue del ApiRest**
 
-[![debug](https://img.icons8.com/color/0/heroku.png)](https://apirest-nod.herokuapp.com/)
+[![debug](https://img.icons8.com/color/0/heroku.png)](https://apirest-nod.herokuapp.com/)  [![debug](https://img.icons8.com/color/48/000000/amazon-web-services.png)](http://18.235.152.56:3000/)
 
 
 ## License
