@@ -76,8 +76,8 @@ http://localhost:3000/api/products/
 ```sh
 http://localhost:3000/api/products/{id}
 ```
-**Peticion GET, reporte en excel, se recomienda utilizar POSTMAN**
-`Para generar el reporte en excel, hacemos click en SEND AN DOWNLOAD`
+**Peticion GET, reporte ene excel, se recomienda utilizar POSTMAN**
+`Para generar el excel, hacemos click en SEND SEND AN DOWNLOAD`
 ```sh
 http://localhost:3000/api/products/report
 ```
@@ -191,6 +191,7 @@ http://localhost:3000/api/sales/{id}
 Opción BODY - RAW - TypeJSON
 { 
     "idFrom": "6174ac7e7ca5c005bd26d389",
+    "idProducto" : "617590fa80f1087fe13a671c",
     "message": "Muy bien, gracias" 
 }
 
@@ -199,14 +200,20 @@ Opción BODY - RAW - TypeJSON
 ```sh
 Opción BODY - RAW - TypeJSON
 {   
-    "_id": "6174ad227ca5c005bd26d38a",
+    "_id": "6175ca43f6f57144dc50265c",
     "idFrom": {
-         "_id": "6174ac7e7ca5c005bd26d389",
+         "_id": "6175b594d6303170ed10d0eb",
         "nombre": "Juan Quintero",
         "apellido": "Hernandez",
         "direccion": "Calle Comun",
         "edad": 26
     }, 
+    "idProducto": {
+          "_id": "617590fa80f1087fe23a671c",
+          "nombre": "Camisa Quintero",
+          "precio": "9999",
+          "cantidad": 12
+    },
     "message": "Muy bien ING, gracias" 
 }
 ```
