@@ -77,7 +77,7 @@ http://localhost:3000/api/products/
 http://localhost:3000/api/products/{id}
 ```
 **Peticion GET, reporte ene excel, se recomienda utilizar POSTMAN**
-`Para generar el excel, hacemos click en SEND SEND AN DOWNLOAD`
+`Para generar el excel, hacemos click en SEND AN DOWNLOAD`
 ```sh
 http://localhost:3000/api/products/report
 ```
