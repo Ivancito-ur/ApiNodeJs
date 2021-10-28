@@ -8,12 +8,12 @@ const COLLECTION = "products";
 
 const getAll = async () => {
   const collection = await Database(COLLECTION);
-  return await collection.find({}).toArray();
+  return collection.find({}).toArray();
 };
 
 const getById = async (id) => {
   const collection = await Database(COLLECTION);
-  return await collection.findOne({ _id: ObjectId(id) });
+  return collection.findOne({ _id: ObjectId(id) });
 };
 
 const create = async (producto) => {
@@ -28,10 +28,10 @@ const deleteById = async (id) => {
   return result.insertedId;
 };
 
-const update = async (req, res) => {
+const update = async (req) => {
   const collection = await Database(COLLECTION);
   let body = req.body;
-  let result = await collection.updateOne(
+  let result = collection.updateOne(
     { "_id": ObjectId(body._id) },
     {
       $set: {

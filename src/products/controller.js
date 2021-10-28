@@ -60,7 +60,7 @@ module.exports.ProductController = {
     }
   },
 
-  generarExcel: (req, res) => {
+  generarExcel: ( res) => {
     try {
       ProductsService.generateReports("Inventario", res);
     } catch (error) {
